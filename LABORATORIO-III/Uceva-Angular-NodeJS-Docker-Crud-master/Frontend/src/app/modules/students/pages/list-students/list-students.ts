@@ -22,7 +22,7 @@ export class ListStudents {
 
   createButtonConfig: ButtonConfig = {
     id: 'create-student-button',
-    title: 'Create Student',
+      title: 'Crear estudiante',
     type: 'primary',
   };
 
