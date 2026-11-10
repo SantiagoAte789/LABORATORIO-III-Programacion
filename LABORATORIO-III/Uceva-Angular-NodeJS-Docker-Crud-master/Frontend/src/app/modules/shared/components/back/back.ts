@@ -18,7 +18,7 @@ export class Back {
 
   configBackButton: ButtonConfig = {
     id: 'back-button',
-    title: 'Back',
+    title: 'Volver',
     type: 'secondary',
     icon: 'arrow-left',
   }
