@@ -1,0 +1,257 @@
+{
+  "info": {
+    "name": "UCEVA CRUD - Profesores y Aulas",
+    "description": "Pruebas de los endpoints de profesores y aulas. Ejecutar db:init y db:seed antes de probar.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Profesores",
+      "item": [
+        {
+          "name": "Obtener todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/teachers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "teachers"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/teachers/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "teachers",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/teachers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "teachers"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Pedro Gomez\",\n  \"email\": \"pedro.gomez@uceva.edu.co\",\n  \"phone\": \"3201000011\",\n  \"department\": \"Ingeniería de Sistemas\",\n  \"experience_years\": 3,\n  \"status\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/teachers/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "teachers",
+                "11"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Pedro Gomez\",\n  \"email\": \"pedro.gomez@uceva.edu.co\",\n  \"phone\": \"3201000011\",\n  \"department\": \"Ingeniería de Sistemas\",\n  \"experience_years\": 4,\n  \"status\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/teachers/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "teachers",
+                "11"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Aulas",
+      "item": [
+        {
+          "name": "Obtener todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/classrooms",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "classrooms"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/classrooms/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "classrooms",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/classrooms",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "classrooms"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Aula 401\",\n  \"building\": \"Bloque A\",\n  \"capacity\": 40,\n  \"type\": \"Teórica\",\n  \"floor\": 4,\n  \"status\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/classrooms/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "classrooms",
+                "11"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Aula 401\",\n  \"building\": \"Bloque A\",\n  \"capacity\": 45,\n  \"type\": \"Teórica\",\n  \"floor\": 4,\n  \"status\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/classrooms/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "classrooms",
+                "11"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

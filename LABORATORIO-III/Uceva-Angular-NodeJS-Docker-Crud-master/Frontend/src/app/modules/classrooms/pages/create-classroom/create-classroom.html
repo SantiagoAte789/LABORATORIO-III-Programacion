@@ -1,0 +1,89 @@
+<app-back />
+
+<div class="container-fluid py-4">
+
+    <div class="mb-4">
+        <h3 class="fw-bold mb-1">Registrar aula</h3>
+        <p class="text-muted mb-0">Completa la información para registrar un nuevo aula.</p>
+    </div>
+
+    <div class="card border">
+        <div class="card-header bg-white py-3">
+            <h5 class="mb-0">
+                <i class="bi bi-plus-circle me-2"></i>
+                Información del aula
+            </h5>
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="classroomForm" (ngSubmit)="createClassroom()">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Nombre del aula *</label>
+                        <input type="text" id="name" class="form-control" formControlName="name"
+                            placeholder="Ingrese el nombre del aula">
+                        @if (classroomForm.get('name')?.touched && classroomForm.get('name')?.invalid) {
+                        <small class="text-danger">El nombre es obligatorio (máx. 100 caracteres).</small>
+                        }
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="building" class="form-label">Edificio *</label>
+                        <input type="text" id="building" class="form-control" formControlName="building"
+                            placeholder="Ingrese el edificio">
+                        @if (classroomForm.get('building')?.touched && classroomForm.get('building')?.invalid) {
+                        <small class="text-danger">El edificio es obligatorio.</small>
+                        }
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="capacity" class="form-label">Capacidad *</label>
+                        <input type="number" id="capacity" class="form-control" formControlName="capacity"
+                            placeholder="Ingrese la capacidad">
+                        @if (classroomForm.get('capacity')?.touched && classroomForm.get('capacity')?.invalid) {
+                        <small class="text-danger">La capacidad debe estar entre 1 y 500.</small>
+                        }
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="type" class="form-label">Tipo *</label>
+                        <input type="text" id="type" class="form-control" formControlName="type"
+                            placeholder="Ej: Aula, Laboratorio, Auditorio">
+                        @if (classroomForm.get('type')?.touched && classroomForm.get('type')?.invalid) {
+                        <small class="text-danger">El tipo es obligatorio.</small>
+                        }
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="floor" class="form-label">Piso *</label>
+                        <input type="number" id="floor" class="form-control" formControlName="floor"
+                            placeholder="Ingrese el piso">
+                        @if (classroomForm.get('floor')?.touched && classroomForm.get('floor')?.invalid) {
+                        <small class="text-danger">El piso debe estar entre 1 y 10.</small>
+                        }
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-check form-switch mt-2">
+                            <input class="form-check-input" type="checkbox" id="status" formControlName="status">
+                            <label class="form-check-label" for="status">Aula activa</label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary" [disabled]="classroomForm.invalid">
+                        <i class="bi bi-save me-2"></i>
+                        Registrar aula
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
