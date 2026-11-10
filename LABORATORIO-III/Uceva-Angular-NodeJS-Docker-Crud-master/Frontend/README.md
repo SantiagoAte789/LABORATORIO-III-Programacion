@@ -4,7 +4,7 @@ Frontend en Angular 20 + Bootstrap 5 que consume el backend del Laboratorio II
 (Node.js + PostgreSQL + Docker). Incluye los módulos del docente (Estudiantes) y los
 dos módulos CRUD del laboratorio: **Profesores** y **Aulas**.
 
-Integrantes: _(completar)_
+Integrantes: Samuel Alzate Correa, Santiago Atehortua Jaramillo
 
 ## Ejecución
 
